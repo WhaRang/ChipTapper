@@ -21,7 +21,9 @@ public class SingleTaskManager : MonoBehaviour
     float aimPercent;
 
     bool isCompleted;
+    bool isMarked;
     bool isStarted;
+    bool isLocked;
     public TaskType currTask;
 
     public Text taskText;
@@ -50,12 +52,26 @@ public class SingleTaskManager : MonoBehaviour
 
     void MarkAsDone()
     {
-        //taskText.color = greenColor;
-        taskText.text = "DONE.";
+        float pause = 0.15f;
+        StartCoroutine(LockCoroutine(5 * pause));
+        taskText.text = "";
+        TextAnimator.animator.TypewriteText(taskText, "DONE.", pause);
+    }
+
+    IEnumerator LockCoroutine(float pause)
+    {
+        isLocked = true;
+        yield return new WaitForSeconds(pause);
+        isLocked = false;
     }
 
     public void PrintStats()
     {
+        if (isCompleted || isLocked)
+        {
+            return;
+        }
+
         if (currTask == TaskType.SCORE)
         {
             taskText.text = currScore + "/" + aimScore;
@@ -150,11 +166,13 @@ public class SingleTaskManager : MonoBehaviour
             {
                 isCompleted = (health.GetCurrPercent() > aimPercent);
             }
+            isMarked = false;
         }
         
-        if (isCompleted)
+        if (isCompleted && !isMarked)
         {
             MarkAsDone();
+            isMarked = true;
         }
     }
 
