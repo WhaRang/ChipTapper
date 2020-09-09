@@ -20,6 +20,8 @@ public class TaskManager : MonoBehaviour
     const int SMALLEST_PERCENT = 10;
     const int BIGGEST_PERCENT = 90;
 
+    const int BONUS_SCORE_FOR_LEVEL = 100;
+
     int level = 1;
     int tasksNeeded = TASKS_NEEDED_FOR_FIRST_LEVEL;
     int completedTasks = 0;
@@ -33,7 +35,7 @@ public class TaskManager : MonoBehaviour
     void Start()
     {
         GenerateTaskForAll();
-        PrintAll();
+        PrintAllForTheFirstTime();
         LevelFill.instance.UpdateFill(completedTasks, tasksNeeded);
         ClickCounter.counter.UpdateClicks();
     }
@@ -71,19 +73,25 @@ public class TaskManager : MonoBehaviour
         stomachTaskManager.SetStarted(true);
     }
 
+    void LevelCompleted()
+    {
+        AddBonusScoreForLevel();
+        tasksNeeded = ComputeTasksNeededForNextLevel();
+        completedTasks = 0;
+        level++;
+    }
+
     void TasksCompleted()
     {
         completedTasks++;
         if (completedTasks >= tasksNeeded)
         {
-            tasksNeeded = ComputeTasksNeededForNextLevel();
-            completedTasks = 0;
-            level++;
+            LevelCompleted();
         }
         AddTimeDependingOnClicks();
         AddScoreDependingOnClicks();
         GenerateTaskForAll();
-        PrintAll();
+        PrintAllForTheFirstTime();
         LevelFill.instance.UpdateFill(completedTasks, tasksNeeded);
         ClickCounter.counter.UpdateClicks();
     }
@@ -98,7 +106,12 @@ public class TaskManager : MonoBehaviour
         int scoreForTasks = ComputeScoreForOrgan(brainTaskManager)
             + ComputeScoreForOrgan(heartTaskManager)
             + ComputeScoreForOrgan(stomachTaskManager);
-        ScoreManager.manager.AddScore(scoreForTasks * ClickCounter.counter.GetScaler()); 
+        ScoreManager.manager.AddScore(scoreForTasks * ClickCounter.counter.GetScaler());
+    }
+
+    void AddBonusScoreForLevel()
+    {
+        ScoreManager.manager.AddScore(level * BONUS_SCORE_FOR_LEVEL);
     }
 
     int ComputeScoreForOrgan(SingleTaskManager organ)
@@ -124,11 +137,11 @@ public class TaskManager : MonoBehaviour
         }
     }
 
-    void PrintAll()
+    void PrintAllForTheFirstTime()
     {
-        brainTaskManager.PrintStats();
-        heartTaskManager.PrintStats();
-        stomachTaskManager.PrintStats();
+        brainTaskManager.PrintStatsForTheFirstTime();
+        heartTaskManager.PrintStatsForTheFirstTime();
+        stomachTaskManager.PrintStatsForTheFirstTime();
     }
 
     void GenerateTaskForAll()

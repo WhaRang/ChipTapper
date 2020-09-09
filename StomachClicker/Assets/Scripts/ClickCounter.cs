@@ -15,6 +15,7 @@ public class ClickCounter : MonoBehaviour
     float scaler = 1.0f;
 
     public Text textField;
+    public ClickTextAnimation textAnimation;
 
     //Color greenColor = new Color(0.0f, 0.831f, 0.486f, 1.0f);
     //Color yellowColor = new Color(0.996f, 0.976f, 0.0f, 1.0f);
@@ -106,6 +107,7 @@ public class ClickCounter : MonoBehaviour
     }
 
     public void UpdateClicks() {
+        textAnimation.Animate();
         clicksPerformed = 0;
         clicksNeeded = ComputeClicksNeeded();
     }

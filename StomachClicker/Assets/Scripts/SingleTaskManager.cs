@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -14,28 +12,27 @@ public class SingleTaskManager : MonoBehaviour
 
     int currScore;
     int aimScore;
-    int deltaScore;
+    int deltaScore = DEFAULT_DELTA;
 
     public const int DEFAULT_DELTA = 9;
+    const float DEFAULT_JUMP_PAUSE = 0.2f;
+    const float DEFAULT_JUMP_HEIGHT = 10f;
+    const float DEFAULT_TYPEWRITER_PAUSE = 0.02f;
 
     float aimPercent;
 
     bool isCompleted;
     bool isMarked;
     bool isStarted;
-    bool isLocked;
+
     public TaskType currTask;
 
     public Text taskText;
+    public Text doneText;
+
     public Health health;
 
     //Color greenColor = new Color(0.0f, 0.831f, 0.486f, 1.0f);
-
-    void Start()
-    {
-        deltaScore = DEFAULT_DELTA;
-        ColorToBlack();
-    }
 
     private void Update()
     {
@@ -45,33 +42,50 @@ public class SingleTaskManager : MonoBehaviour
         }
     }
 
-    void ColorToBlack()
-    {
-        taskText.color = Color.black;
-    }
-
     void MarkAsDone()
     {
-        float pause = 0.15f;
-        StartCoroutine(LockCoroutine(5 * pause));
-        taskText.text = "";
-        TextAnimator.animator.TypewriteText(taskText, "DONE.", pause);
+        doneText.text = "";
+        SetDoneTextActive();
+        TextAnimator.animator.TypewriteText(doneText, "DONE.", DEFAULT_TYPEWRITER_PAUSE);
     }
 
-    IEnumerator LockCoroutine(float pause)
+    void SetDoneTextActive()
     {
-        isLocked = true;
+        taskText.gameObject.SetActive(false);
+        doneText.gameObject.SetActive(true);
+    }
+
+    void SetTaskTextActive()
+    {
+        doneText.gameObject.SetActive(false);
+        taskText.gameObject.SetActive(true);
+    }
+
+    IEnumerator PrintStatsWithPause(float pause)
+    {
         yield return new WaitForSeconds(pause);
-        isLocked = false;
+        SetTaskTextActive();
+        PrintStats();
+        TextAnimator.animator.HalfJump(taskText, DEFAULT_JUMP_HEIGHT, DEFAULT_JUMP_PAUSE);
+    }
+
+    public void PrintStatsForTheFirstTime()
+    {
+        StartCoroutine(PrintStatsWithPause(5 * DEFAULT_TYPEWRITER_PAUSE));
     }
 
     public void PrintStats()
     {
-        if (isCompleted || isLocked)
+        if (isCompleted)
         {
             return;
         }
 
+        Print();
+    }
+
+    void Print()
+    {
         if (currTask == TaskType.SCORE)
         {
             taskText.text = currScore + "/" + aimScore;
@@ -118,7 +132,6 @@ public class SingleTaskManager : MonoBehaviour
         aimScore = score;
         currScore = 0;
         currTask = TaskType.SCORE;
-        ColorToBlack();
     }
 
     public void GenerateLessThanTask(float percent)
@@ -127,7 +140,6 @@ public class SingleTaskManager : MonoBehaviour
         isStarted = false;
         aimPercent = percent;
         currTask = TaskType.LESS_THAN;
-        ColorToBlack();
     }
 
     public void GenerateMoreThanTask(float percent)
@@ -136,7 +148,6 @@ public class SingleTaskManager : MonoBehaviour
         isStarted = false;
         aimPercent = percent;
         currTask = TaskType.MORE_THAN;
-        ColorToBlack();
     }
 
     public void OnClick()
@@ -166,13 +177,14 @@ public class SingleTaskManager : MonoBehaviour
             {
                 isCompleted = (health.GetCurrPercent() > aimPercent);
             }
+
             isMarked = false;
         }
-        
+
         if (isCompleted && !isMarked)
         {
-            MarkAsDone();
             isMarked = true;
+            MarkAsDone();
         }
     }
 
