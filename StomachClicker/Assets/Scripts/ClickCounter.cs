@@ -17,6 +17,8 @@ public class ClickCounter : MonoBehaviour
     public Text textField;
     public ClickTextAnimation textAnimation;
 
+    bool isFirstTime = true;
+
     //Color greenColor = new Color(0.0f, 0.831f, 0.486f, 1.0f);
     //Color yellowColor = new Color(0.996f, 0.976f, 0.0f, 1.0f);
     //Color redColor = new Color(0.831f, 0.0f, 0.0f, 1.0f);
@@ -107,7 +109,14 @@ public class ClickCounter : MonoBehaviour
     }
 
     public void UpdateClicks() {
-        textAnimation.Animate();
+        if (!isFirstTime)
+        {
+            textAnimation.Animate();
+        }
+        else
+        {
+            isFirstTime = false;
+        }
         clicksPerformed = 0;
         clicksNeeded = ComputeClicksNeeded();
     }

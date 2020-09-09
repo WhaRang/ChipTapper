@@ -12,26 +12,36 @@ public class Timer : MonoBehaviour
     float startTime = 60.0f;
     public Text textField;
 
+    bool isFirstClickPerformed;
+
     private void Awake()
     {
        if (timer == null)
             timer = this.gameObject.GetComponent<Timer>();
     }
 
+    public void FirstClickPerformed()
+    {
+        isFirstClickPerformed = true;
+    }
+
     void Update()
     {
         if (!EndGameManager.manager.IsEnded())
         {
-            if (startTime < Time.deltaTime)
+            if (isFirstClickPerformed)
             {
-                startTime = 0.0f;
-                EndGameManager.manager.EndGame();
+                if (startTime < Time.deltaTime)
+                {
+                    startTime = 0.0f;
+                    EndGameManager.manager.EndGame();
+                }
+                else
+                {
+                    startTime -= Time.deltaTime;
+                }
+                textField.text = startTime.ToString("F1") + "s";
             }
-            else
-            {
-                startTime -= Time.deltaTime;
-            }
-            textField.text = startTime.ToString("F1") + "s";
         }
         else
         {

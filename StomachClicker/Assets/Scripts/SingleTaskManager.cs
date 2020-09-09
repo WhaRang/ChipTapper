@@ -24,6 +24,7 @@ public class SingleTaskManager : MonoBehaviour
     bool isCompleted;
     bool isMarked;
     bool isStarted;
+    bool isFirstTime = true;
 
     public TaskType currTask;
 
@@ -71,7 +72,16 @@ public class SingleTaskManager : MonoBehaviour
 
     public void PrintStatsForTheFirstTime()
     {
-        StartCoroutine(PrintStatsWithPause(5 * DEFAULT_TYPEWRITER_PAUSE));
+        if (!isFirstTime)
+        {
+            StartCoroutine(PrintStatsWithPause(5 * DEFAULT_TYPEWRITER_PAUSE));
+        }
+        else
+        {
+            SetTaskTextActive();
+            PrintStats();
+            isFirstTime = false;
+        }
     }
 
     public void PrintStats()
