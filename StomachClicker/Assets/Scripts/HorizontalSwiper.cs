@@ -13,7 +13,7 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
 
     public float percentThreshold = 0.2f;
     public float easing = 0.25f;
-    public int totalPages = 2;
+    public int totalPages = 3;
     public int currentPage = 1;
 
     private void Awake()

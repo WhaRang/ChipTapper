@@ -9,7 +9,7 @@ public class ScoreForClickPrefabBehaviour : MonoBehaviour
     float counter = 0.0f;
     public Text textField;
 
-    float speed = 300.0f;
+    float speed = 500.0f;
     Vector2 direction = new Vector2(0.0f, 1.0f);
 
     public void SetText(string _text)
