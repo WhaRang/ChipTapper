@@ -32,7 +32,9 @@ public class BackGroundBehaviour : MonoBehaviour
     public Image heartBG;
     public Image stomachBG;
 
-    private void Awake()
+    float deltaHeight = 2160.0f;
+
+    /*private void Awake()
     {
         if (page == Page.FIRST)
         {
@@ -40,15 +42,15 @@ public class BackGroundBehaviour : MonoBehaviour
         }
         else if (page == Page.SECOND)
         {
-            this.gameObject.transform.position = new Vector3(0.0f, -Screen.height, 0.0f);
+            this.gameObject.transform.position = new Vector3(0.0f, -deltaHeight, 0.0f);
         }
-    }
+    }*/
 
     private void Start()
     {
         standartColor.a = alpha;
         speed = minSpeed;
-        maxSpeed = Screen.height / 2;
+        maxSpeed = deltaHeight / 2;
         currentPage = HorizontalSwiper.swiper.currentPage;
     }
 
@@ -71,9 +73,9 @@ public class BackGroundBehaviour : MonoBehaviour
         if (isStarted)
         {
             moveObject();
-            if (this.gameObject.transform.position.y >= Screen.height)
+            if (this.gameObject.transform.position.y >= deltaHeight)
             {
-                this.gameObject.transform.position = new Vector3(0.0f, -Screen.height, 0.0f);
+                this.gameObject.transform.position = new Vector3(0.0f, -deltaHeight, 0.0f);
             }            
         }
 

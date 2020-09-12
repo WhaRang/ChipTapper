@@ -16,6 +16,9 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
     public int totalPages = 3;
     public int currentPage = 1;
 
+    float scaler;
+    const float DEFAULT_SIDE_RATIO = 2.0f;
+
     private void Awake()
     {
         if (swiper == null)
@@ -24,6 +27,17 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
 
     void Start()
     {
+        float subScaler = CanvasInitializer.canvas.pixelRect.height /
+            CanvasInitializer.canvas.pixelRect.width;
+        if (DEFAULT_SIDE_RATIO < subScaler)
+        {
+            scaler = DEFAULT_SIDE_RATIO / subScaler;
+        }
+        else
+        {
+            scaler = 1.0f;
+        }
+        Debug.Log(scaler);
         bgHolder = gameObject;
         panelLocation = transform.position;
         bgLocation = transform.position;
@@ -36,19 +50,19 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
     }
     public void OnEndDrag(PointerEventData data)
     {
-        float percentage = (data.pressPosition.x - data.position.x) / Screen.width;
+        float percentage = (data.pressPosition.x - data.position.x) / (1080.0f * scaler);
         if (Mathf.Abs(percentage) >= percentThreshold)
         {
             Vector3 newLocation = panelLocation;
             if (percentage > 0 && currentPage < totalPages)
             {
                 currentPage++;
-                newLocation += new Vector3(-Screen.width, 0, 0);
+                newLocation += new Vector3(-1080.0f * scaler, 0, 0);
             }
             else if (percentage < 0 && currentPage > 1)
             {
                 currentPage--;
-                newLocation += new Vector3(Screen.width, 0, 0);
+                newLocation += new Vector3(1080.0f * scaler, 0, 0);
             }
             StartCoroutine(SmoothMove(transform.position, newLocation, easing));
             panelLocation = newLocation;
@@ -80,7 +94,7 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         currentPage = page;
 
         Vector3 newLocation = Vector3.zero;
-        newLocation.x = (-1) * (page - 1) * Screen.width;
+        newLocation.x = (-1) * (page - 1) * 1080.0f * scaler;
 
         panelLocation = newLocation;
         bgLocation = newLocation;
