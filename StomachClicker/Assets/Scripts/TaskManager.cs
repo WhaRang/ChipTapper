@@ -12,8 +12,8 @@ public class TaskManager : MonoBehaviour
 
     const int TASKS_NEEDED_FOR_FIRST_LEVEL = 5;
     const float DELTA_TASKS = 2f;
-    const int START_SCORE = 72;
-    const int DELTA_SCORE = 9;
+    const int START_SCORE = 8;
+    const int DELTA_SCORE = 1;
 
     const int START_PERCENT = 50;
     const int DELTA_PERCENT = 5;

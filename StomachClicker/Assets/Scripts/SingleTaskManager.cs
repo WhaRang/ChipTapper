@@ -14,7 +14,7 @@ public class SingleTaskManager : MonoBehaviour
     int aimScore;
     int deltaScore = DEFAULT_DELTA;
 
-    public const int DEFAULT_DELTA = 9;
+    public const int DEFAULT_DELTA = 1;
     const float DEFAULT_JUMP_PAUSE = 0.2f;
     const float DEFAULT_JUMP_HEIGHT = 10f;
     const float DEFAULT_TYPEWRITER_PAUSE = 0.02f;
