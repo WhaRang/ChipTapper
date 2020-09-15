@@ -37,7 +37,6 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         {
             scaler = 1.0f;
         }
-        Debug.Log(scaler);
         bgHolder = gameObject;
         panelLocation = transform.position;
         bgLocation = transform.position;

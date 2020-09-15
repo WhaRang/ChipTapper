@@ -7,12 +7,11 @@ public class TapToPlayBehaviour : MonoBehaviour
 {
     public Text textField;
 
-    float pause = 3.0f;
-    float counter = 3.0f;
-    float jumpTime = 2.0f;
+    float pause = 2.0f;
+    float counter = 2.0f;
+    float jumpTime = 1.35f;
 
     float jump = 50.0f;
-
     public bool isPressed;
 
     void Update()

@@ -43,10 +43,6 @@ public class Timer : MonoBehaviour
                 textField.text = startTime.ToString("F1") + "s";
             }
         }
-        else
-        {
-            textField.text = "YOU LOSE";
-        }
     }
 
     public void AddDefaultTime()

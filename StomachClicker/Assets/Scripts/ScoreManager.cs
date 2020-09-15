@@ -6,8 +6,6 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager manager;
-
-    public Text textField;
     int score;
 
     private void Awake()
@@ -16,14 +14,13 @@ public class ScoreManager : MonoBehaviour
             manager = this.gameObject.GetComponent<ScoreManager>();
     }
 
-    private void Start()
-    {
-        textField.text = score + " pt.";
-    }
-
     public void AddScore(float scoreToAdd)
     {
         score += (int)scoreToAdd;
-        textField.text = score + " pt.";
+    }
+
+    public int GetScore()
+    {
+        return score;
     }
 }

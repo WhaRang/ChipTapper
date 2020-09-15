@@ -30,6 +30,7 @@ public class Health : MonoBehaviour
         if (health - hit < 0)
         {
             health = 0;
+            EndGameManager.manager.EndGame();
         }
         else
         {

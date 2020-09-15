@@ -1325,6 +1325,7 @@ GameObject:
   - component: {fileID: 1450979646}
   - component: {fileID: 1450979648}
   - component: {fileID: 1450979647}
+  - component: {fileID: 1450979649}
   m_Layer: 0
   m_Name: ScoreText
   m_TagString: Untagged
@@ -1392,6 +1393,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1450979645}
   m_CullTransparentMesh: 0
+--- !u!114 &1450979649
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450979645}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e53de3b7becfa29428627846ea0cb604, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  showScore: 1
+  showHighScore: 0
+  textField: {fileID: 1450979647}
 --- !u!1 &1465704570
 GameObject:
   m_ObjectHideFlags: 0
@@ -1495,6 +1511,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1487441136}
+  - component: {fileID: 1487441137}
   m_Layer: 0
   m_Name: GameTab
   m_TagString: Untagged
@@ -1502,8 +1519,8 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1487441136
-Transform:
+--- !u!224 &1487441136
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -1520,6 +1537,24 @@ Transform:
   m_Father: {fileID: 2129081047}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1487441137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1487441135}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 141ed9e652a30ac42a12ca5b1ff2b9e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  canMove: 0
 --- !u!1 &1535261939
 GameObject:
   m_ObjectHideFlags: 0
@@ -1529,6 +1564,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1535261940}
+  - component: {fileID: 1535261941}
   m_Layer: 0
   m_Name: Score
   m_TagString: Untagged
@@ -1551,6 +1587,18 @@ Transform:
   m_Father: {fileID: 1487441136}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1535261941
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1535261939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6e3641da2cc6434f9acf7d49d9f0c40, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1663717285
 GameObject:
   m_ObjectHideFlags: 0
