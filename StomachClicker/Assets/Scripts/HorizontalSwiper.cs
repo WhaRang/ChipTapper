@@ -40,6 +40,8 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
         bgHolder = gameObject;
         panelLocation = transform.position;
         bgLocation = transform.position;
+        panelLocation.y = 0.0f;
+        bgLocation.y = 0.0f;
     }
     public void OnDrag(PointerEventData data)
     {

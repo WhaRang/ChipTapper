@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager manager;
-    int score;
+    static int score;
 
     private void Awake()
     {
@@ -22,5 +22,10 @@ public class ScoreManager : MonoBehaviour
     public int GetScore()
     {
         return score;
+    }
+
+    public void ZeroScore()
+    {
+        score = 0;
     }
 }

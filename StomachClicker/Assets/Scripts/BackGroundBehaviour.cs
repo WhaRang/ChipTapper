@@ -21,7 +21,7 @@ public class BackGroundBehaviour : MonoBehaviour
     bool isStarted;
     int currentPage;
 
-    float alpha = 0.588f;
+    float alpha = 0.702f;
     float pause = 0.3f;
     int smoothness = 20;
 
@@ -83,6 +83,12 @@ public class BackGroundBehaviour : MonoBehaviour
         {
             HandlePage();
         }
+    }
+
+    public void StopBG()
+    {
+        minSpeed = 0.0f;
+        speed = 0.0f;
     }
 
     void HandlePage()

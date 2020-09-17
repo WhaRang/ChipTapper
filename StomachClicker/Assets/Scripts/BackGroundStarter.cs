@@ -20,4 +20,10 @@ public class BackGroundStarter : MonoBehaviour
         firstScreen.AddSpeed(deltaSpeed);
         secondScreen.AddSpeed(deltaSpeed);
     }
+
+    public void StopAll()
+    {
+        firstScreen.StopBG();
+        secondScreen.StopBG();
+    }
 }

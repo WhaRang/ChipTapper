@@ -8,6 +8,11 @@ public class EndGameManager : MonoBehaviour
     public static EndGameManager manager;
     bool isEnded;
     float pause = 1.5f;
+    float canvasFadePause = 1.1f;
+
+    public DumperBehaviour clickDumper;
+    public BackGroundStarter BGstarter;
+    public Animator canvasAnimator;
 
     private void Awake()
     {
@@ -24,6 +29,16 @@ public class EndGameManager : MonoBehaviour
     {
         isEnded = true;
         StartCoroutine(EndGameCoroutine());
+        clickDumper.gameObject.SetActive(true);
+        clickDumper.EndGame();
+        BGstarter.StopAll();
+        StartCoroutine(FadeCanvasCoroutine());
+    }
+
+    IEnumerator FadeCanvasCoroutine()
+    {
+        yield return new WaitForSeconds(canvasFadePause);
+        canvasAnimator.SetTrigger("Out");
     }
 
     IEnumerator EndGameCoroutine()
