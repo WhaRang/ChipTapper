@@ -13,6 +13,9 @@ public class Timer : MonoBehaviour
     public Text textField;
 
     bool isFirstClickPerformed;
+    bool isStopped;
+
+    public GameObject blinker;
 
     private void Awake()
     {
@@ -27,13 +30,14 @@ public class Timer : MonoBehaviour
 
     void Update()
     {
-        if (!EndGameManager.manager.IsEnded())
+        if (!isStopped)
         {
             if (isFirstClickPerformed)
             {
                 if (startTime < Time.deltaTime)
                 {
                     startTime = 0.0f;
+                    EndGameManager.manager.SetBlinker(blinker);
                     EndGameManager.manager.EndGame();
                 }
                 else
@@ -53,5 +57,10 @@ public class Timer : MonoBehaviour
     public void AddTime(float time)
     {
         startTime += time;
+    }
+
+    public void SetStopped(bool newValue)
+    {
+        isStopped = newValue;
     }
 }

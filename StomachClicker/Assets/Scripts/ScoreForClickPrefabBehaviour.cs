@@ -5,11 +5,11 @@ using UnityEngine.UI;
 
 public class ScoreForClickPrefabBehaviour : MonoBehaviour
 {
-    const float LIFE_TIME = 0.3f;
+    const float LIFE_TIME = 0.35f;
     float counter = 0.0f;
     public Text textField;
 
-    float speed = 500.0f;
+    float speed = 400.0f;
     Vector2 direction = new Vector2(0.0f, 1.0f);
 
     public void SetText(string _text)

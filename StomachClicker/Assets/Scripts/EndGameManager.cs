@@ -9,10 +9,13 @@ public class EndGameManager : MonoBehaviour
     bool isEnded;
     float pause = 1.5f;
     float canvasFadePause = 1.1f;
+    float blinkerPause = 0.5f;
 
     public DumperBehaviour clickDumper;
     public BackGroundStarter BGstarter;
     public Animator canvasAnimator;
+
+    GameObject blinker;
 
     private void Awake()
     {
@@ -28,11 +31,22 @@ public class EndGameManager : MonoBehaviour
     public void EndGame()
     {
         isEnded = true;
+        Timer.timer.SetStopped(true);
         StartCoroutine(EndGameCoroutine());
         clickDumper.gameObject.SetActive(true);
         clickDumper.EndGame();
         BGstarter.StopAll();
         StartCoroutine(FadeCanvasCoroutine());
+        StartCoroutine(BlinkerCoroutine());
+    }
+
+    IEnumerator BlinkerCoroutine()
+    {
+        yield return new WaitForSeconds(blinkerPause);
+        if (blinker != null)
+        {
+            blinker.SetActive(true);
+        }
     }
 
     IEnumerator FadeCanvasCoroutine()
@@ -50,5 +64,10 @@ public class EndGameManager : MonoBehaviour
     public bool IsEnded()
     {
         return isEnded;
+    }
+
+    public void SetBlinker(GameObject newBlinker)
+    {
+        blinker = newBlinker;
     }
 }

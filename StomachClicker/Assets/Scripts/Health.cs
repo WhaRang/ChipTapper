@@ -12,6 +12,8 @@ public class Health : MonoBehaviour
     public float maxHealth = 200.0f;
     public float health;
 
+    public GameObject blinker;
+
     private void Start()
     {
         health = maxHealth;
@@ -30,6 +32,7 @@ public class Health : MonoBehaviour
         if (health - hit < 0)
         {
             health = 0;
+            EndGameManager.manager.SetBlinker(blinker);
             EndGameManager.manager.EndGame();
         }
         else
