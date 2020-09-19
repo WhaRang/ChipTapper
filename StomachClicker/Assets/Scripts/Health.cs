@@ -29,7 +29,7 @@ public class Health : MonoBehaviour
 
     public void hit(float hit)
     {
-        if (health - hit < 0)
+        if (health - hit <= 0)
         {
             health = 0;
             EndGameManager.manager.SetBlinker(blinker);
