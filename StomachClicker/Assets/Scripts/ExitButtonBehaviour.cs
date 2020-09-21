@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class ExitButtonBehaviour : MonoBehaviour
 {
-    public Animator canvasAnimator;
     public Animator exitButtonAnimator;
 
-    float animationTime = 0.83f;
+    public GameObject dialog;
+    public GameObject dumper;
 
     public void PressDown()
     {
@@ -22,13 +22,7 @@ public class ExitButtonBehaviour : MonoBehaviour
 
     public void OnClick()
     {
-        StartCoroutine(ClickCoroutine());
-    }
-
-    IEnumerator ClickCoroutine()
-    {
-        canvasAnimator.SetTrigger("Out");
-        yield return new WaitForSeconds(animationTime);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        dumper.SetActive(true);
+        dialog.SetActive(true);
     }
 }
