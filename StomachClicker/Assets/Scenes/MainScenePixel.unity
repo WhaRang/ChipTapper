@@ -156,7 +156,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 600, y: 400}
+  m_SizeDelta: {x: 700, y: 500}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3836764
 MonoBehaviour:
@@ -1519,12 +1519,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1979931747}
+          m_MethodName: OnPressDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 424739209}
           m_MethodName: PressUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1979931747}
+          m_MethodName: OnPressUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1755,12 +1777,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1607996274}
+          m_MethodName: OnPressDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 425674450}
           m_MethodName: PressUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1607996274}
+          m_MethodName: OnPressUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2216,7 +2260,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &560052671 stripped
 MonoBehaviour:
@@ -2887,12 +2931,34 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
+        - m_Target: {fileID: 1695467398}
+          m_MethodName: OnPressDown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
   - eventID: 3
     callback:
       m_PersistentCalls:
         m_Calls:
         - m_Target: {fileID: 753594156}
           m_MethodName: PressUp
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1695467398}
+          m_MethodName: OnPressUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -3575,7 +3641,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 40}
+  m_AnchoredPosition: {x: 0, y: 80}
   m_SizeDelta: {x: 500, y: 150}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1057993812
@@ -3599,7 +3665,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: 893efec28358e83429ad0d0e370f2dd3, type: 3}
-    m_FontSize: 35
+    m_FontSize: 50
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
@@ -3965,7 +4031,7 @@ PrefabInstance:
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -140
+      value: -160
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
@@ -3975,12 +4041,12 @@ PrefabInstance:
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 117
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 72
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
@@ -4178,6 +4244,7 @@ GameObject:
   - component: {fileID: 1116305845}
   - component: {fileID: 1116305844}
   - component: {fileID: 1116305846}
+  - component: {fileID: 1116305847}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -4207,11 +4274,11 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1116305843}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2129081047}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1116305846
@@ -4226,6 +4293,62 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 82b1ed549e7753f4bbbdaf7597197a7e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1116305847
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1116305843}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a8f8994c23f5b274aa5f5c7815466c05, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - single: 0
+    name: stomach_pt1
+    clip: {fileID: 8300000, guid: 54848f6a43bedf84b89c422a6db19e4b, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - single: 0
+    name: stomach_pt2
+    clip: {fileID: 8300000, guid: 13612891a08ecc640acce924b3903c33, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - single: 0
+    name: heartbeat_pt1
+    clip: {fileID: 8300000, guid: 6accbe1e713ffbf4d91de4528f47ef50, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - single: 0
+    name: heartbeat_pt2
+    clip: {fileID: 8300000, guid: c06bcae6b0b340c4ab5fefea50ed18e0, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - single: 0
+    name: brain_pt1
+    clip: {fileID: 8300000, guid: 6473c7da9716076449aa384c734a12e9, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  - single: 0
+    name: brain_pt2
+    clip: {fileID: 8300000, guid: 746c4309f1a9b434ebb4d0583c2a7118, type: 3}
+    volume: 1
+    pitch: 1
+    loop: 0
+    source: {fileID: 0}
+  volume: 0.135
 --- !u!1 &1122082773
 GameObject:
   m_ObjectHideFlags: 0
@@ -5582,6 +5705,7 @@ GameObject:
   - component: {fileID: 1607996272}
   - component: {fileID: 1607996270}
   - component: {fileID: 1607996269}
+  - component: {fileID: 1607996274}
   m_Layer: 0
   m_Name: Stomach
   m_TagString: Untagged
@@ -5682,6 +5806,20 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -250}
   m_SizeDelta: {x: 450, y: 460}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1607996274
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1607996268}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e2cc0ce303cd74899e7a92da24fca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundNameOnPressDown: stomach_pt1
+  soundNameOnPressUp: stomach_pt2
 --- !u!1 &1631233936
 GameObject:
   m_ObjectHideFlags: 0
@@ -5992,6 +6130,7 @@ GameObject:
   - component: {fileID: 1695467395}
   - component: {fileID: 1695467394}
   - component: {fileID: 1695467397}
+  - component: {fileID: 1695467398}
   m_Layer: 5
   m_Name: Brain
   m_TagString: Untagged
@@ -6092,6 +6231,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1695467398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1695467392}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e2cc0ce303cd74899e7a92da24fca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundNameOnPressDown: brain_pt1
+  soundNameOnPressUp: brain_pt2
 --- !u!1001 &1714472529
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6283,7 +6436,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1792236724
 GameObject:
@@ -6455,7 +6608,7 @@ Transform:
   - {fileID: 1714472530}
   - {fileID: 1409161788}
   m_Father: {fileID: 2129081047}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1800429468
 Animator:
@@ -7173,6 +7326,7 @@ GameObject:
   - component: {fileID: 1979931743}
   - component: {fileID: 1979931742}
   - component: {fileID: 1979931746}
+  - component: {fileID: 1979931747}
   m_Layer: 0
   m_Name: Heart
   m_TagString: Untagged
@@ -7273,6 +7427,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1979931747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1979931741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01e2cc0ce303cd74899e7a92da24fca9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundNameOnPressDown: heartbeat_pt1
+  soundNameOnPressUp: heartbeat_pt2
 --- !u!1 &2022301975
 GameObject:
   m_ObjectHideFlags: 0
@@ -7725,9 +7893,10 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_Children:
+  - {fileID: 1116305845}
   - {fileID: 1800429467}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -8314,7 +8483,7 @@ PrefabInstance:
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 140
+      value: 160
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
@@ -8324,12 +8493,12 @@ PrefabInstance:
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_SizeDelta.x
-      value: 117
+      value: 200
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
       propertyPath: m_SizeDelta.y
-      value: 72
+      value: 125
       objectReference: {fileID: 0}
     - target: {fileID: 6123483449982631313, guid: 8fd73f9d665e9dc4eb4d530a95de74e6,
         type: 3}
