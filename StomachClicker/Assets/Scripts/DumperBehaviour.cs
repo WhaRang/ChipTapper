@@ -8,6 +8,8 @@ public class DumperBehaviour : MonoBehaviour
 
     public void EndGame()
     {
+        FindObjectOfType<AudioManager>().Stop("main_theme");
+        FindObjectOfType<AudioManager>().Play("game_over");
         animator.SetTrigger("EndGame");
     }
 }

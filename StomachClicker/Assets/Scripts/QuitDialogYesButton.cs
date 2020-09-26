@@ -10,6 +10,7 @@ public class QuitDialogYesButton : MonoBehaviour
 
     public void OnClick()
     {
+        FindObjectOfType<AudioManager>().Stop("main_theme");
         StartCoroutine(ClickCoroutine());
     }
 

@@ -12,7 +12,7 @@ public class EndGameManager : MonoBehaviour
     float blinkerPause = 0.5f;
 
     public DumperBehaviour clickDumper;
-    public BackGroundStarter BGstarter;
+    public BackGroundStarter BgStarter;
     public Animator canvasAnimator;
 
     GameObject blinker;
@@ -35,7 +35,7 @@ public class EndGameManager : MonoBehaviour
         StartCoroutine(EndGameCoroutine());
         clickDumper.gameObject.SetActive(true);
         clickDumper.EndGame();
-        BGstarter.StopAll();
+        BgStarter.StopAll();
         StartCoroutine(FadeCanvasCoroutine());
         StartCoroutine(BlinkerCoroutine());
     }

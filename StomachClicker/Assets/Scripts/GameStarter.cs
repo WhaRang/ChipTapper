@@ -17,6 +17,11 @@ public class GameStarter : MonoBehaviour
             starter = this.gameObject.GetComponent<GameStarter>();
     }
 
+    private void Start()
+    {
+        isStarted = false;
+    }
+
     void Update()
     {
         if (isStarted && !isHandled)

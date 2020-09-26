@@ -13,6 +13,12 @@ public class GameTabBehaviour : MonoBehaviour
 
     float maxHight = 5000.0f;
 
+    private void Start()
+    {
+        canMove = false;
+        FindObjectOfType<AudioManager>().Play("main_menu_theme");
+    }
+
     void Update()
     {
         if (GameStarter.starter.isStarted)
