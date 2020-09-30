@@ -22,6 +22,10 @@ public class PressableFieldBehaviour : MonoBehaviour
     public void PressUp()
     {
         animator.SetTrigger("Out");
+    }
+
+    public void OnClick()
+    {
         FindObjectOfType<AudioManager>().Play("scratch");
         FindObjectOfType<AudioManager>().Stop("main_menu_theme");
     }

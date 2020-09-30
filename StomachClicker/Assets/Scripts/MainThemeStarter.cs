@@ -6,6 +6,11 @@ public class MainThemeStarter : MonoBehaviour
 {
     static bool started;
 
+    private void Start()
+    {
+        started = false;
+    }
+
     public void StartMainTheme()
     {
         if (!started)

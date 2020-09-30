@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ScoreTextBehaviour : MonoBehaviour
+public class HighscoreTextBehaviour : MonoBehaviour
 {
     public bool showScoreText;
 
@@ -13,11 +13,11 @@ public class ScoreTextBehaviour : MonoBehaviour
     {
         if (showScoreText)
         {
-            textField.text = ("SCORE: " + ScoreManager.manager.GetScore() + " PT.");
+            textField.text = ("HIGHSCORE: " + ScoreManager.manager.GetHighScore() + " PT.");
         }
         else
         {
-            textField.text = ScoreManager.manager.GetScore() + " PT.";
+            textField.text = ScoreManager.manager.GetHighScore() + " PT.";
         }
     }
 }
