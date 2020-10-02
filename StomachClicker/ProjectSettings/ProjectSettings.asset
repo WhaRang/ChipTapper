@@ -41,7 +41,7 @@ PlayerSettings:
     height: 1
   m_SplashScreenLogos:
   - logo: {fileID: 21300000, guid: 4f951b00532c5fd4eb42dbf984d6cf07, type: 3}
-    duration: 2
+    duration: 3
   m_VirtualRealitySplashScreen: {fileID: 0}
   m_HolographicTrackingLossScreen: {fileID: 0}
   defaultScreenWidth: 1024
@@ -349,42 +349,42 @@ PlayerSettings:
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: ee11228cba040484d825d5014d53712d, type: 3}
+      - {fileID: 2800000, guid: 845a6871f1d92c046827a30e18485cd1, type: 3}
       m_Width: 432
       m_Height: 432
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: fb6014f720fe52b4da3bc2d5a1274a19, type: 3}
+      - {fileID: 2800000, guid: fed30166e96b10c4ba4131245ada9fbc, type: 3}
       m_Width: 324
       m_Height: 324
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: b7f3f995672ed364bbeae28007bad94f, type: 3}
+      - {fileID: 2800000, guid: 313a45930eadaf14d91f30ab412c7c62, type: 3}
       m_Width: 216
       m_Height: 216
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: 5ab50766cad4ba245ade84d3f08d087c, type: 3}
+      - {fileID: 2800000, guid: e05731be847003b4599a224f646eab81, type: 3}
       m_Width: 162
       m_Height: 162
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: 57903a252e6380c42aa16282dfb00b08, type: 3}
+      - {fileID: 2800000, guid: 9ed29814ab142674a92da5c5b2988e5d, type: 3}
       m_Width: 108
       m_Height: 108
       m_Kind: 2
       m_SubKind: 
     - m_Textures:
       - {fileID: 2800000, guid: 7f2ccb47106b1974881b5d3e43b6a099, type: 3}
-      - {fileID: 2800000, guid: 1850e6a2d6e6c9e409fb0f2f49cdd41b, type: 3}
+      - {fileID: 2800000, guid: 04d473ef0e1d67f42a9add358229a870, type: 3}
       m_Width: 81
       m_Height: 81
       m_Kind: 2
