@@ -63,4 +63,14 @@ public class Timer : MonoBehaviour
     {
         isStopped = newValue;
     }
+
+    public void StopTimer()
+    {
+        SetStopped(true);
+    }
+
+    public void LaunchTimer()
+    {
+        SetStopped(false);
+    }
 }

@@ -3973,9 +3973,10 @@ GameObject:
   m_Component:
   - component: {fileID: 1305061698}
   - component: {fileID: 1305061699}
-  - component: {fileID: 1305061702}
   - component: {fileID: 1305061701}
   - component: {fileID: 1305061700}
+  - component: {fileID: 1305061703}
+  - component: {fileID: 1305061702}
   m_Layer: 0
   m_Name: PauseButton
   m_TagString: Untagged
@@ -4029,8 +4030,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1305061702}
-          m_MethodName: PressedDown
+        - m_Target: {fileID: 1305061703}
+          m_MethodName: PressDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4044,8 +4045,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1305061702}
-          m_MethodName: PressedUp
+        - m_Target: {fileID: 1305061703}
+          m_MethodName: PressUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4061,6 +4062,17 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1305061702}
           m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1651322402}
+          m_MethodName: StopTimer
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4098,12 +4110,24 @@ MonoBehaviour:
   m_GameObject: {fileID: 1305061697}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d281d1dd4101d2c4b8921062ea18a0ed, type: 3}
+  m_Script: {fileID: 11500000, guid: 65f3c47a3ffb72f4daa87a6ab4a4c20e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pauseAnimator: {fileID: 1305061701}
-  pauseMenu: {fileID: 898493747}
+  menu: {fileID: 898493747}
   dumper: {fileID: 948878200}
+--- !u!114 &1305061703
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1305061697}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086dbf5ea9ea8b34e95c5b6ec4d97a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitButtonAnimator: {fileID: 1305061701}
 --- !u!1 &1321682918
 GameObject:
   m_ObjectHideFlags: 0
@@ -4931,9 +4955,10 @@ GameObject:
   - component: {fileID: 1631233937}
   - component: {fileID: 1631233939}
   - component: {fileID: 1631233938}
-  - component: {fileID: 1631233941}
   - component: {fileID: 1631233940}
   - component: {fileID: 1631233942}
+  - component: {fileID: 1631233944}
+  - component: {fileID: 1631233943}
   m_Layer: 0
   m_Name: PlayButton
   m_TagString: Untagged
@@ -5014,8 +5039,19 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1631233941}
+        - m_Target: {fileID: 1631233943}
           m_MethodName: OnClick
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+        - m_Target: {fileID: 1651322402}
+          m_MethodName: LaunchTimer
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5029,8 +5065,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1631233941}
-          m_MethodName: PressedDown
+        - m_Target: {fileID: 1631233944}
+          m_MethodName: PressDown
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5044,8 +5080,8 @@ MonoBehaviour:
     callback:
       m_PersistentCalls:
         m_Calls:
-        - m_Target: {fileID: 1631233941}
-          m_MethodName: PressedUp
+        - m_Target: {fileID: 1631233944}
+          m_MethodName: PressUp
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -5055,22 +5091,6 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 0
           m_CallState: 2
---- !u!114 &1631233941
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1631233936}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c6de44399ca234141a350a3d4f6e4287, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  playButtonAnimator: {fileID: 1631233942}
-  bgAnimator: {fileID: 1152835947}
-  pauseMenu: {fileID: 898493747}
-  dumper: {fileID: 948878200}
 --- !u!95 &1631233942
 Animator:
   serializedVersion: 3
@@ -5090,6 +5110,34 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1631233943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631233936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c8f6eec3074c36a47a41a2cedda41d0d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  bgAnimator: {fileID: 1152835947}
+  menu: {fileID: 898493747}
+  dumper: {fileID: 948878200}
+--- !u!114 &1631233944
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1631233936}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 086dbf5ea9ea8b34e95c5b6ec4d97a0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  exitButtonAnimator: {fileID: 1631233942}
 --- !u!4 &1648492306 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1078731832130660742, guid: c94f956bca5ec3845a873eaf269d12c1,
