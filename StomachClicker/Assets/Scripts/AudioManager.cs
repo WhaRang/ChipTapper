@@ -65,4 +65,20 @@ public class AudioManager : MonoBehaviour
             s.source.Stop();
         }
     }
+
+    public void MuteAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = 0.0f;
+        }
+    }
+
+    public void UnmuteAll()
+    {
+        foreach (Sound s in sounds)
+        {
+            s.source.volume = s.volume * volume;
+        }
+    }
 }
