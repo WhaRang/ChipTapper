@@ -14,9 +14,11 @@ public class EndGameManager : MonoBehaviour
     public DumperBehaviour clickDumper;
     public BackGroundStarter BgStarter;
     public Animator canvasAnimator;
+    public Animator adMenuAnimator;
+    public GameObject AdMenu;
 
     int gamePlayedFree;
-    int maxGameCanBePlayedFree = 2;
+    int maxGameCanBePlayedFree = 1;
 
 
     GameObject blinker;
@@ -36,14 +38,7 @@ public class EndGameManager : MonoBehaviour
     public void EndGame()
     {
         isEnded = true;
-        HandleEndForAddShowning();
-        Timer.timer.SetStopped(true);
-        StartCoroutine(EndGameCoroutine());
-        clickDumper.gameObject.SetActive(true);
-        clickDumper.EndGame();
-        BgStarter.StopAll();
-        StartCoroutine(FadeCanvasCoroutine());
-        StartCoroutine(BlinkerCoroutine());
+        HandleEndForAddShowning();        
     }
 
     void HandleEndForAddShowning()
@@ -52,8 +47,30 @@ public class EndGameManager : MonoBehaviour
         if (gamePlayedFree >= maxGameCanBePlayedFree)
         {
             gamePlayedFree = 0;
-            AdManager.manager.PlayInterstitialAd();
+            StartCoroutine(AdMenuCoroutine());
         }
+        else
+        {
+            StartCoroutine(FadeCanvasCoroutine());
+            StartCoroutine(EndGameCoroutine());
+        }
+        NormalEnding();
+    }
+
+    void NormalEnding()
+    {
+        Timer.timer.SetStopped(true);
+        clickDumper.gameObject.SetActive(true);
+        clickDumper.EndGame();
+        BgStarter.StopAll();
+        StartCoroutine(BlinkerCoroutine());
+    }
+
+    IEnumerator AdMenuCoroutine()
+    {
+        yield return new WaitForSeconds(pause);
+        AdMenu.SetActive(true);
+        adMenuAnimator.SetTrigger("In");
     }
 
     IEnumerator BlinkerCoroutine()
@@ -71,15 +88,15 @@ public class EndGameManager : MonoBehaviour
         canvasAnimator.SetTrigger("Out");
     }
 
-    IEnumerator EndGameCoroutine()
+    public IEnumerator EndGameCoroutine()
     {
         yield return new WaitForSeconds(pause);
         LoadMainMenu();
     }
 
-    void LoadMainMenu()
+    public void LoadMainMenu()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
+        SceneManager.LoadScene((int)BuildIndexes.INDEXES.MAIN_MENU);
     }
 
     public bool IsEnded()

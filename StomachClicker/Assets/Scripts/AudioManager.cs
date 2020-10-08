@@ -13,6 +13,8 @@ public class AudioManager : MonoBehaviour
     [Range(0f, 1f)]
     public float volume;
 
+    bool isMuted;
+
     private void Awake()
     {
 
@@ -48,7 +50,14 @@ public class AudioManager : MonoBehaviour
         }
         if (!(s.source.isPlaying && s.single))
         {
-            s.source.volume = s.volume * volume;
+            if (isMuted)
+            {
+                s.source.volume = 0.0f;
+            }
+            else
+            {
+                s.source.volume = s.volume * volume;
+            }
             s.source.Play();
         }
     }
@@ -68,6 +77,7 @@ public class AudioManager : MonoBehaviour
 
     public void MuteAll()
     {
+        isMuted = true;
         foreach (Sound s in sounds)
         {
             s.source.volume = 0.0f;
@@ -76,9 +86,10 @@ public class AudioManager : MonoBehaviour
 
     public void UnmuteAll()
     {
+        isMuted = false;
         foreach (Sound s in sounds)
         {
-            s.source.volume = s.volume * volume;
+            s.source.volume = s.volume;
         }
     }
 }

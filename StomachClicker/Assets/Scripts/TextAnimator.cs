@@ -35,13 +35,17 @@ public class TextAnimator : MonoBehaviour
 
     IEnumerator JumpCoroutine(Text textField, float jump, float pause)
     {
-        textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
+        if (textField != null)
+            textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
+        if (textField != null)
+            textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
+        if (textField != null)
+            textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
+        if (textField != null)
+            textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
     }
 
     public void TypewriteText(Text textField, string text, float pause)

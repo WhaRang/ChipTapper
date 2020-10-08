@@ -22,7 +22,6 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
     {
         if (manager == null)
             manager = this.gameObject.GetComponent<AdManager>();
-        DontDestroyOnLoad(gameObject);
     }
 
     private void Start()
