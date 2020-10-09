@@ -19,10 +19,6 @@ public class ClickCounter : MonoBehaviour
 
     bool isFirstTime = true;
 
-    //Color greenColor = new Color(0.0f, 0.831f, 0.486f, 1.0f);
-    //Color yellowColor = new Color(0.996f, 0.976f, 0.0f, 1.0f);
-    //Color redColor = new Color(0.831f, 0.0f, 0.0f, 1.0f);
-
     private void Awake()
     {
         if (counter == null)
@@ -38,19 +34,16 @@ public class ClickCounter : MonoBehaviour
     {
         if (clicksPerformed > (int)(1.5 * clicksNeeded))
         {
-            //textField.color = redColor;
             textField.text = clicksPerformed + "/" + 2 * clicksNeeded;
             scaler = 1.0f;
         }
         else if (clicksPerformed > clicksNeeded)
         {
-            //textField.color = yellowColor;
             textField.text = clicksPerformed + "/" + (int)(1.5 * clicksNeeded);
             scaler = 1.5f;
         }
         else if (clicksPerformed <= clicksNeeded)
         {
-            //textField.color =  greenColor;
             textField.text = clicksPerformed + "/" + clicksNeeded;
             scaler = 2.0f;
         }        

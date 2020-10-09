@@ -34,24 +34,12 @@ public class BackGroundBehaviour : MonoBehaviour
 
     float deltaHeight = 2160.0f;
 
-    /*private void Awake()
-    {
-        if (page == Page.FIRST)
-        {
-            this.gameObject.transform.position = Vector3.zero;
-        }
-        else if (page == Page.SECOND)
-        {
-            this.gameObject.transform.position = new Vector3(0.0f, -deltaHeight, 0.0f);
-        }
-    }*/
-
     private void Start()
     {
         standartColor.a = alpha;
         speed = minSpeed;
         maxSpeed = deltaHeight / 2;
-        currentPage = HorizontalSwiper.swiper.currentPage;
+        currentPage = PageManager.manager.currPage;
     }
 
     public void StartMovement()
@@ -79,7 +67,7 @@ public class BackGroundBehaviour : MonoBehaviour
             }            
         }
 
-        if (currentPage != HorizontalSwiper.swiper.currentPage)
+        if (currentPage != PageManager.manager.currPage)
         {
             HandlePage();
         }
@@ -94,23 +82,23 @@ public class BackGroundBehaviour : MonoBehaviour
     void HandlePage()
     {
         DisableCurrent();
-        currentPage = HorizontalSwiper.swiper.currentPage;
+        currentPage = PageManager.manager.currPage;
         EnableCurrent();
     }
 
     void EnableCurrent()
     {
-        if (currentPage == 1)
+        if (currentPage == 0)
         {
             StartCoroutine(EnableCoroutine(brainBG));
             StartCoroutine(SetAlphaAfterPause(brainBG, alpha));
         }
-        else if (currentPage == 2)
+        else if (currentPage == 1)
         {
             StartCoroutine(EnableCoroutine(heartBG));
             StartCoroutine(SetAlphaAfterPause(heartBG, alpha));
         }
-        else if (currentPage == 3)
+        else if (currentPage == 2)
         {
             StartCoroutine(EnableCoroutine(stomachBG));
             StartCoroutine(SetAlphaAfterPause(stomachBG, alpha));
@@ -132,17 +120,17 @@ public class BackGroundBehaviour : MonoBehaviour
 
     void DisableCurrent()
     {
-        if (currentPage == 1)
+        if (currentPage == 0)
         {
             StartCoroutine(DisableCoroutine(brainBG));
             StartCoroutine(SetAlphaAfterPause(brainBG, 0.0f));
         }
-        else if (currentPage == 2)
+        else if (currentPage == 1)
         {
             StartCoroutine(DisableCoroutine(heartBG));
             StartCoroutine(SetAlphaAfterPause(heartBG, 0.0f));
         }
-        else if (currentPage == 3)
+        else if (currentPage == 2)
         {
             StartCoroutine(DisableCoroutine(stomachBG));
             StartCoroutine(SetAlphaAfterPause(heartBG, 0.0f));

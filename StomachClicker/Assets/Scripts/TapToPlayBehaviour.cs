@@ -21,7 +21,7 @@ public class TapToPlayBehaviour : MonoBehaviour
             if (counter >= pause)
             {
                 counter = 0.0f;
-                TextAnimator.animator.HalfJump(textField, jump, jumpTime);
+                TextAnimator.animator.HalfJump(textField.gameObject, jump, jumpTime);
             }
             counter += Time.deltaTime;
         }

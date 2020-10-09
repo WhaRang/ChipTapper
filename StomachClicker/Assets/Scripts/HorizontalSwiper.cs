@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
+public class HorizontalSwiper : MonoBehaviour
 {
     public static HorizontalSwiper swiper;
 

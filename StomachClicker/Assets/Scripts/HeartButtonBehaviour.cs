@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class HeartButtonBehaviour : MonoBehaviour, IDragHandler, IEndDragHandler
+public class HeartButtonBehaviour : MonoBehaviour
 {
     public Health brain;
     public Health heart;
@@ -25,15 +25,5 @@ public class HeartButtonBehaviour : MonoBehaviour, IDragHandler, IEndDragHandler
         heart.heal(heartHeal);
         stomach.hit(stomachDamage);
         brain.hit(brainDamage);
-    }
-    public void OnDrag(PointerEventData eventData)
-    {
-        isDragging = true;
-        HorizontalSwiper.swiper.OnDrag(eventData);
-    }
-
-    public void OnEndDrag(PointerEventData eventData)
-    {
-        HorizontalSwiper.swiper.OnEndDrag(eventData);
     }
 }

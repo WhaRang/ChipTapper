@@ -67,7 +67,7 @@ public class SingleTaskManager : MonoBehaviour
         yield return new WaitForSeconds(pause);
         SetTaskTextActive();
         PrintStats();
-        TextAnimator.animator.HalfJump(taskText, DEFAULT_JUMP_HEIGHT, DEFAULT_JUMP_PAUSE);
+        TextAnimator.animator.HalfJump(taskText.gameObject, DEFAULT_JUMP_HEIGHT, DEFAULT_JUMP_PAUSE);
     }
 
     public void PrintStatsForTheFirstTime()

@@ -28,24 +28,24 @@ public class TextAnimator : MonoBehaviour
         textField.color = originalTextColor;
     }
 
-    public void HalfJump(Text textField, float jump, float pause)
+    public void HalfJump(GameObject gObject, float jump, float pause)
     {
-        StartCoroutine(JumpCoroutine(textField, jump, pause));
+        StartCoroutine(JumpCoroutine(gObject, jump, pause));
     }
 
-    IEnumerator JumpCoroutine(Text textField, float jump, float pause)
+    IEnumerator JumpCoroutine(GameObject gObject, float jump, float pause)
     {
-        if (textField != null)
-            textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
+        if (gObject != null)
+            gObject.transform.position += new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        if (textField != null)
-            textField.gameObject.transform.position += new Vector3(0f, jump / 2, 0f);
+        if (gObject != null)
+            gObject.transform.position += new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        if (textField != null)
-            textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
+        if (gObject != null)
+            gObject.transform.position -= new Vector3(0f, jump / 2, 0f);
         yield return new WaitForSeconds(pause / 3);
-        if (textField != null)
-            textField.gameObject.transform.position -= new Vector3(0f, jump / 2, 0f);
+        if (gObject != null)
+            gObject.transform.position -= new Vector3(0f, jump / 2, 0f);
     }
 
     public void TypewriteText(Text textField, string text, float pause)
