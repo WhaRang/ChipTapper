@@ -17,6 +17,17 @@ public class OnOffButton : MonoBehaviour
     public void OnPressDown()
     {
         isActive = !isActive;
+        UpdateText();
+    }
+
+    public void SetIsActive(bool newValue)
+    {
+        isActive = newValue;
+        UpdateText();
+    }
+
+    void UpdateText()
+    {
         if (isActive)
         {
             textField.text = "on";
