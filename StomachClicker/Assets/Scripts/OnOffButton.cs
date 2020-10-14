@@ -3,16 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-[RequireComponent(typeof(Text))]
 public class OnOffButton : MonoBehaviour
 {
     public bool isActive;
-    Text textField;
+    public Text textField;
 
-    private void Start()
-    {
-        textField = GetComponent<Text>();
-    }
 
     public void OnPressDown()
     {

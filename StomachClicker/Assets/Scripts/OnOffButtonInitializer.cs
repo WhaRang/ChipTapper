@@ -16,13 +16,13 @@ public class OnOffButtonInitializer : MonoBehaviour
 
         if (UiSettings.settings.GetMovingBgAlpha() == 1.0)
         {
-            button.SetIsActive(true);
             activator.SetIsActive(true);
+            button.SetIsActive(true);
         }
         else
         {
-            button.SetIsActive(false);
             activator.SetIsActive(false);
+            button.SetIsActive(false);
         }
     }
 }

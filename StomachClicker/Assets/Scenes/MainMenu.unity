@@ -470,7 +470,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -157.5}
+  m_AnchoredPosition: {x: 0, y: -158}
   m_SizeDelta: {x: 0, y: -315}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &198262069
@@ -5065,6 +5065,7 @@ GameObject:
   - component: {fileID: 1836186035}
   - component: {fileID: 1836186034}
   - component: {fileID: 1836186038}
+  - component: {fileID: 1836186039}
   m_Layer: 0
   m_Name: OnOffButton
   m_TagString: Untagged
@@ -5143,6 +5144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isActive: 1
+  textField: {fileID: 1836186036}
 --- !u!114 &1836186036
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5197,6 +5199,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MovingBG: {fileID: 1663717288}
+--- !u!114 &1836186039
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1836186032}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e81062882d54b9c4589e18282d3c756e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1842961997 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1567104268808220786, guid: 5185806cdef5cfc48a255805adf25e92,
@@ -5474,7 +5488,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
   m_RaycastTarget: 1
   m_Maskable: 1
   m_OnCullStateChanged:

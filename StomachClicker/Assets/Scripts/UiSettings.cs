@@ -17,8 +17,7 @@ public class UiSettings : MonoBehaviour
 
         DontDestroyOnLoad(gameObject);
 
-        float bgA = 0f;
-        bgA = PlayerPrefs.GetFloat("movingBgAlpha", bgA);
+        movingBgAlpha = PlayerPrefs.GetFloat("movingBgAlpha", movingBgAlpha);
 
         float r = 0f, g = 0f, b = 0, a = 0f;
         r = PlayerPrefs.GetFloat("cameraColorR", r);
@@ -59,6 +58,7 @@ public class UiSettings : MonoBehaviour
     private void OnDestroy()
     {
         SaveCameraColor();
+        SaveMovingBgAlpha();
         PlayerPrefs.Save();
     }
 
