@@ -8,6 +8,6 @@ public class MovingBgInitializer : MonoBehaviour
 
     private void Start()
     {
-        canvasGroup.alpha = UiSettings.settings.GetMovingBgAlpha();
+        canvasGroup.alpha = UISettings.settings.GetMovingBgAlpha();
     }
 }

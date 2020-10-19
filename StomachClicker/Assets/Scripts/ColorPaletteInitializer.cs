@@ -10,7 +10,7 @@ public class ColorPaletteInitializer : MonoBehaviour
     {
         foreach (ColorBrick brick in bricks)
         {
-            if (brick.GetBrickColor() == UiSettings.settings.GetCameraColor())
+            if (brick.GetBrickColor() == UISettings.settings.GetCameraColor())
             {
                 brick.TransformBrickOnPosition();
                 return;

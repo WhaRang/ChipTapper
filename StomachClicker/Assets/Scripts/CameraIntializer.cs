@@ -10,6 +10,6 @@ public class CameraIntializer : MonoBehaviour
     private void Start()
     {
         mainCamera = GetComponent<Camera>();
-        mainCamera.backgroundColor = UiSettings.settings.GetCameraColor();
+        mainCamera.backgroundColor = UISettings.settings.GetCameraColor();
     }
 }

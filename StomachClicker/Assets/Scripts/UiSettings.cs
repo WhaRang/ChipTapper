@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UiSettings : MonoBehaviour
+public class UISettings : MonoBehaviour
 {
-    public static UiSettings settings;
+    public static UISettings settings;
 
     public Color defaultCameraColor;
     Color cameraColor;
@@ -13,26 +13,16 @@ public class UiSettings : MonoBehaviour
     private void Awake()
     {
         if (settings == null)
-            settings = this.gameObject.GetComponent<UiSettings>();
+            settings = this.gameObject.GetComponent<UISettings>();
 
         DontDestroyOnLoad(gameObject);
 
         movingBgAlpha = PlayerPrefs.GetFloat("movingBgAlpha", movingBgAlpha);
 
-        float r = 0f, g = 0f, b = 0, a = 0f;
-        r = PlayerPrefs.GetFloat("cameraColorR", r);
-        g = PlayerPrefs.GetFloat("cameraColorG", g);
-        b = PlayerPrefs.GetFloat("cameraColorB", b);
-        a = PlayerPrefs.GetFloat("cameraColorA", a);
-
-        if (r == 0f && g == 0f && b == 0f)
-        {
-            cameraColor = defaultCameraColor;
-        }
-        else
-        {
-            cameraColor = new Color(r, g, b, a);
-        }
+        cameraColor.r = PlayerPrefs.GetFloat("cameraColorR", defaultCameraColor.r);
+        cameraColor.g = PlayerPrefs.GetFloat("cameraColorG", defaultCameraColor.g);
+        cameraColor.b = PlayerPrefs.GetFloat("cameraColorB", defaultCameraColor.b);
+        cameraColor.a = PlayerPrefs.GetFloat("cameraColorA", defaultCameraColor.a);
     }
 
     public void SetMovingBgAlpha(float alpha)

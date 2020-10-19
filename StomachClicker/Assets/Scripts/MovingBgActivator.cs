@@ -24,12 +24,12 @@ public class MovingBgActivator : MonoBehaviour
         if (isActive)
         {
             MovingBG.alpha = 1.0f;
-            UiSettings.settings.SetMovingBgAlpha(1.0f);
+            UISettings.settings.SetMovingBgAlpha(1.0f);
         }
         else
         {
             MovingBG.alpha = 0.0f;
-            UiSettings.settings.SetMovingBgAlpha(0.0f);
+            UISettings.settings.SetMovingBgAlpha(0.0f);
         }
     }
 }

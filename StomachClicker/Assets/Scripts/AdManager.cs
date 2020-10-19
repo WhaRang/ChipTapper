@@ -64,16 +64,17 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidError(string message)
     {
+        //AudioManager.manager.UnmuteAll();
     }
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        AudioManager.instance.MuteAll();
+       // AudioManager.manager.MuteAll();
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)
     {
-        AudioManager.instance.UnmuteAll();
+        //AudioManager.manager.UnmuteAll();
     }
 }
 

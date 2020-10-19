@@ -14,7 +14,7 @@ public class OnOffButtonInitializer : MonoBehaviour
         button = GetComponent<OnOffButton>();
         activator = GetComponent<MovingBgActivator>();
 
-        if (UiSettings.settings.GetMovingBgAlpha() == 1.0)
+        if (UISettings.settings.GetMovingBgAlpha() == 1.0)
         {
             activator.SetIsActive(true);
             button.SetIsActive(true);

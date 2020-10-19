@@ -4,6 +4,14 @@ using UnityEngine;
 [System.Serializable]
 public class Sound
 {
+    public enum SoundType
+    {
+        MUSIC,
+        EFFECT,
+        OTHER
+    }
+
+    public SoundType type;
 
     public bool single;
 
@@ -20,5 +28,4 @@ public class Sound
 
     [HideInInspector]
     public AudioSource source;
-
 }

@@ -18,6 +18,6 @@ public class CameraColorSetter : MonoBehaviour
     public void OnPressDown()
     {
         mainCamera.backgroundColor = image.color;
-        UiSettings.settings.SetCameraColor(image.color);
+        UISettings.settings.SetCameraColor(image.color);
     }
 }
