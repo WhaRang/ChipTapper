@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class ColorPaletteInitializer : MonoBehaviour
 {
-    public ColorBrick[] bricks;
+    public ChooseableElement[] bricks;
 
     private void Start()
     {
-        foreach (ColorBrick brick in bricks)
+        foreach (ChooseableElement brick in bricks)
         {
             if (brick.GetBrickColor() == UISettings.settings.GetCameraColor())
             {

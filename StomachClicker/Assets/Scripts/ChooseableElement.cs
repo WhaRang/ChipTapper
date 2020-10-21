@@ -4,9 +4,9 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Image))]
-public class ColorBrick : MonoBehaviour
+public class ChooseableElement : MonoBehaviour
 {
-    public GameObject brickFrame;
+    public GameObject frame;
     Image image;
 
     private void Awake()
@@ -26,6 +26,6 @@ public class ColorBrick : MonoBehaviour
 
     public void TransformBrickOnPosition()
     {
-        brickFrame.gameObject.transform.position = this.gameObject.transform.position;
+        frame.gameObject.transform.position = this.gameObject.transform.position;
     }
 }

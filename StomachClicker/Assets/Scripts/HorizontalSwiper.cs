@@ -95,4 +95,17 @@ public class HorizontalSwiper : MonoBehaviour, IDragHandler, IEndDragHandler
             yield return null;
         }
     }
+
+    public void MoveTo(int page)
+    {
+        Vector3 newLocation = panelLocation;
+        newLocation += new Vector3(DEFAULT_SCREEN_SIZE * scaler * (currentPage - page), 0, 0);
+        currentPage = page;
+        StartCoroutine(SmoothMove(transform.position, newLocation, easing));
+        panelLocation = newLocation;
+        bgLocation = newLocation;
+
+        if (TileMover.mover != null)
+            TileMover.mover.MoveTo(page);
+    }
 }

@@ -78,4 +78,15 @@ public class TileMover : MonoBehaviour
             yield return null;
         }
     }
+
+    public void MoveTo(int page)
+    {
+        Vector3 newLocation = panelLocation;
+        newLocation += new Vector3(HorizontalSwiper.DEFAULT_SCREEN_SIZE *
+            HorizontalSwiper.swiper.scaler * menuToTileScaler * (currentPage - page), 0, 0);
+        currentPage = page;
+        StartCoroutine(SmoothMove(transform.position, newLocation, easing));
+        panelLocation = newLocation;
+        tileLocation = newLocation;
+    }
 }
