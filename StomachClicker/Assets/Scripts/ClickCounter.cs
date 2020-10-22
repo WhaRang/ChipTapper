@@ -19,6 +19,12 @@ public class ClickCounter : MonoBehaviour
 
     bool isFirstTime = true;
 
+    public Image multiplierIcon;
+
+    public Sprite x1Sprite;
+    public Sprite x2Sprite;
+    public Sprite x1_5Sprite;
+
     private void Awake()
     {
         if (counter == null)
@@ -36,16 +42,19 @@ public class ClickCounter : MonoBehaviour
         {
             textField.text = clicksPerformed + "/" + 2 * clicksNeeded;
             scaler = 1.0f;
+            multiplierIcon.sprite = x1Sprite;
         }
         else if (clicksPerformed > clicksNeeded)
         {
             textField.text = clicksPerformed + "/" + (int)(1.5 * clicksNeeded);
             scaler = 1.5f;
+            multiplierIcon.sprite = x1_5Sprite;
         }
         else if (clicksPerformed <= clicksNeeded)
         {
             textField.text = clicksPerformed + "/" + clicksNeeded;
             scaler = 2.0f;
+            multiplierIcon.sprite = x2Sprite;
         }        
     }
 

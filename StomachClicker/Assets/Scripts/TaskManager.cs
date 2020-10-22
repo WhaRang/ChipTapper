@@ -12,6 +12,7 @@ public class TaskManager : MonoBehaviour
 
     const int TASKS_NEEDED_FOR_FIRST_LEVEL = 5;
     const float DELTA_TASKS = 2f;
+
     const int START_SCORE = 8;
     const int DELTA_SCORE = 1;
 
@@ -21,6 +22,10 @@ public class TaskManager : MonoBehaviour
     const int BIGGEST_PERCENT = 90;
 
     const int BONUS_SCORE_FOR_LEVEL = 100;
+    const int BONUS_MONEY_FOR_LEVEL = 20;
+    const float MONEY_FOR_LEVEL_SCALER = 1.2f;
+
+    int moneyForLevel = BONUS_MONEY_FOR_LEVEL;
 
     int level = 1;
     int tasksNeeded = TASKS_NEEDED_FOR_FIRST_LEVEL;
@@ -76,6 +81,7 @@ public class TaskManager : MonoBehaviour
     void LevelCompleted()
     {
         AddBonusScoreForLevel();
+        AddMoneyForLevel();
         tasksNeeded = ComputeTasksNeededForNextLevel();
         completedTasks = 0;
         level++;
@@ -107,6 +113,12 @@ public class TaskManager : MonoBehaviour
             + ComputeScoreForOrgan(heartTaskManager)
             + ComputeScoreForOrgan(stomachTaskManager);
         ScoreManager.manager.AddScore(scoreForTasks * ClickCounter.counter.GetScaler());
+    }
+
+    void AddMoneyForLevel()
+    {
+        MoneyManager.manager.AddMoney(moneyForLevel);
+        moneyForLevel = (int)(moneyForLevel * MONEY_FOR_LEVEL_SCALER);
     }
 
     void AddBonusScoreForLevel()
