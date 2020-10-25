@@ -8,17 +8,12 @@ public class EndGameManager : MonoBehaviour
     public static EndGameManager manager;
     bool isEnded;
     float pause = 1.5f;
-    float canvasFadePause = 1.1f;
     float blinkerPause = 0.5f;
 
     public DumperBehaviour clickDumper;
     public BackGroundStarter BgStarter;
-    public Animator canvasAnimator;
-    public Animator adMenuAnimator;
-    public GameObject AdMenu;
-
-    int gamePlayedFree;
-    int maxGameCanBePlayedFree = 1;
+    public Animator EndGameMenuAnimator;
+    public GameObject EndGameMenu;
 
 
     GameObject blinker;
@@ -32,28 +27,12 @@ public class EndGameManager : MonoBehaviour
     private void Start()
     {
         isEnded = false;
-        gamePlayedFree = PlayerPrefs.GetInt("gamePlayedFree");
     }
 
     public void EndGame()
     {
         isEnded = true;
-        HandleEndForAddShowning();        
-    }
-
-    void HandleEndForAddShowning()
-    {
-        gamePlayedFree++;
-        if (gamePlayedFree >= maxGameCanBePlayedFree)
-        {
-            gamePlayedFree = 0;
-            StartCoroutine(AdMenuCoroutine());
-        }
-        else
-        {
-            StartCoroutine(FadeCanvasCoroutine());
-            StartCoroutine(EndGameCoroutine());
-        }
+        StartCoroutine(EndGameMenuCoroutine());
         NormalEnding();
     }
 
@@ -66,11 +45,11 @@ public class EndGameManager : MonoBehaviour
         StartCoroutine(BlinkerCoroutine());
     }
 
-    IEnumerator AdMenuCoroutine()
+    IEnumerator EndGameMenuCoroutine()
     {
         yield return new WaitForSeconds(pause);
-        AdMenu.SetActive(true);
-        adMenuAnimator.SetTrigger("In");
+        EndGameMenu.SetActive(true);
+        EndGameMenuAnimator.SetTrigger("In");
     }
 
     IEnumerator BlinkerCoroutine()
@@ -82,23 +61,6 @@ public class EndGameManager : MonoBehaviour
         }
     }
 
-    IEnumerator FadeCanvasCoroutine()
-    {
-        yield return new WaitForSeconds(canvasFadePause);
-        canvasAnimator.SetTrigger("Out");
-    }
-
-    public IEnumerator EndGameCoroutine()
-    {
-        yield return new WaitForSeconds(pause);
-        LoadMainMenu();
-    }
-
-    public void LoadMainMenu()
-    {
-        SceneManager.LoadScene((int)BuildIndexes.INDEXES.MAIN_MENU);
-    }
-
     public bool IsEnded()
     {
         return isEnded;
@@ -107,11 +69,5 @@ public class EndGameManager : MonoBehaviour
     public void SetBlinker(GameObject newBlinker)
     {
         blinker = newBlinker;
-    }
-
-    private void OnDestroy()
-    {
-        PlayerPrefs.SetInt("gamePlayedFree", gamePlayedFree);
-        PlayerPrefs.Save();
     }
 }

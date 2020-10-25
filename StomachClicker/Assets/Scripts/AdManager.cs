@@ -50,7 +50,7 @@ public class AdManager : MonoBehaviour, IUnityAdsListener
         }
     }
 
-    public void PlayRewardedVidoeAdd()
+    public void PlayRewardedVidoeAd()
     {
         if (Advertisement.IsReady(rewardedVideoAd))
         {

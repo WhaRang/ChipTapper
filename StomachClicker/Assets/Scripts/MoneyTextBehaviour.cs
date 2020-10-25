@@ -7,6 +7,7 @@ public class MoneyTextBehaviour : MonoBehaviour
 {
 
     public bool showAllMoney;
+    public bool showDna;
     public Text textField;
 
     void Update()
@@ -18,6 +19,11 @@ public class MoneyTextBehaviour : MonoBehaviour
         else
         {
             textField.text = "" + MoneyManager.manager.GetMoneyInRound();
+        }
+
+        if (showDna)
+        {
+            textField.text += " dna";
         }
     }
 }

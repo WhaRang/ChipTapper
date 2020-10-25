@@ -5,6 +5,8 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
+    public bool isHighScore;
+
     public static ScoreManager manager;
     static int score;
     static int highScore;
@@ -24,6 +26,7 @@ public class ScoreManager : MonoBehaviour
     {
         if (score > highScore)
         {
+            isHighScore = true;
             highScore = score;
             PlayerPrefs.SetInt("highscore", highScore);
         }

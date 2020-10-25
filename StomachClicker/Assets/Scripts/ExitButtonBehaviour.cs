@@ -6,9 +6,7 @@ using UnityEngine.SceneManagement;
 public class ExitButtonBehaviour : MonoBehaviour
 {
     public Animator exitButtonAnimator;
-
-    public GameObject dialog;
-    public GameObject dumper;
+    public GameObject dialogPrefab;
 
     public void PressDown()
     {
@@ -22,7 +20,7 @@ public class ExitButtonBehaviour : MonoBehaviour
 
     public void OnClick()
     {
-        dumper.SetActive(true);
-        dialog.SetActive(true);
+        Instantiate(dialogPrefab, Vector3.zero, Quaternion.identity,
+            GameObject.FindGameObjectWithTag("Canvas").transform);
     }
 }

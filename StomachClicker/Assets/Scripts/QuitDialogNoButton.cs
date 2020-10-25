@@ -20,7 +20,7 @@ public class QuitDialogNoButton : MonoBehaviour
     {
         dialogAnimator.SetTrigger("Out");
         yield return new WaitForSeconds(animationTime);
-        dialog.SetActive(false);
         dumper.SetActive(false);
+        Destroy(dialog);
     }
 }

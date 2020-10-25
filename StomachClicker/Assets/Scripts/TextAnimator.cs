@@ -13,6 +13,19 @@ public class TextAnimator : MonoBehaviour
             animator = this.gameObject.GetComponent<TextAnimator>();
     }
 
+    public void TextColorSwap(Text textField, Color secondColor, float pause)
+    {
+        StartCoroutine(TextColorSwapCoroutine(textField, secondColor, pause));
+    }
+
+    IEnumerator TextColorSwapCoroutine(Text textField, Color secondColor, float pause)
+    {
+        Color originalTextColor = textField.color;
+        textField.color = secondColor;
+        yield return new WaitForSeconds(pause);
+        textField.color = originalTextColor;
+    }
+
     public void ColorSwap(Text textField, Image bg, float pause)
     {
         StartCoroutine(ColorSwapCoroutine(textField, bg, pause));

@@ -5505,6 +5505,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6e3641da2cc6434f9acf7d49d9f0c40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isHighScore: 0
 --- !u!1 &1537467545
 GameObject:
   m_ObjectHideFlags: 0
@@ -6790,6 +6791,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   showAllMoney: 1
+  showDna: 0
   textField: {fileID: 1943978096}
 --- !u!1 &1950053468
 GameObject:

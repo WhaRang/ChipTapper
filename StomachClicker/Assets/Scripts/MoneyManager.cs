@@ -26,6 +26,11 @@ public class MoneyManager : MonoBehaviour
         allMoney += (int)moneyToAdd;
     }
 
+    public void DoubleUpMoney()
+    {
+        AddMoney(moneyInRound);
+    }
+
     public int GetMoneyInRound()
     {
         return moneyInRound;
